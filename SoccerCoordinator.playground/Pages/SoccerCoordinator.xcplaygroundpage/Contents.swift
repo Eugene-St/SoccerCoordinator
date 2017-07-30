@@ -78,47 +78,114 @@ let players = [
 // Dictionary for each player
 
 let player1 = ["Name": "Joe Smith", "Height": "42", "Experience": "YES", "Guardian": "Jim and Jan Smith"]
-
 let player2 = ["Name": "Jill Tanner", "Height": "36", "Experience": "YES", "Guardian": "Clara Tanner"]
-
 let player3 = ["Name": "Bill Bon", "Height": "43", "Experience": "YES", "Guardian": "Sara and Jenny Bon"]
-
 let player4 = ["Name": "Eva Gordon", "Height": "45", "Experience": "NO", "Guardian": "Wendy and Mike Gordon"]
-
 let player5 = ["Name": "Matt Gill", "Height": "40", "Experience": "NO", "Guardian": "Charles and Sylvia Gill"]
-
 let player6 = ["Name": "Kimmy Stein", "Height": "41", "Experience": "NO", "Guardian": "Kimmy Stein"]
-
 let player7 = ["Name": "Sammy Adams", "Height": "45", "Experience": "NO", "Guardian": "Sammy Adams"]
-
 let plzyer8 = ["Name": "Karl Saygan", "Height": "42", "Experience": "YES", "Guardian": "Heather Bledsoe"]
-
 let player9 = ["Name": "Suzane Greenberg", "Height": "44", "Experience": "YES", "Guardian": "Henrietta Dumas"]
-
 let player10 = ["Name": "Sal Dali", "Height": "41", "Experience": "NO", "Guardian": "Gala Dali"]
-
 let player11 = ["Name": "Joe Kavalier", "Height": "39", "Experience": "NO", "Guardian": "Sam and Elaine Kavalier"]
-
 let player12 = ["Name": "Ben Finkelstein", "Height": "44", "Experience": "NO", "Guardian": "Aaron and Jill Finkelstein"]
-
 let player13 = ["Name": "Diego Soto", "Height": "41", "Experience": "YES", "Guardian": "Robin and Sarika Soto"]
-
 let player14 = ["Name": "Chloe Alaska", "Height": "47", "Experience": "NO", "Guardian": "David and Jamie Alaska"]
-
 let player15 = ["Name": "Arnold Willis", "Height": "43", "Experience": "NO", "Guardian": "Claire Willis"]
-
 let player16 = ["Name": "Phillip Helm", "Height": "44", "Experience": "YES", "Guardian": "Thomas Helm and Eva Jones"]
-
 let player17 = ["Name": "Les Clay", "Height": "42", "Experience": "YES", "Guardian": "Wynonna Brown"]
-
 let player18 = ["Name": "Herschel Krustofski", "Height": "45", "Experience": "YES", "Guardian": "Hyman and Rachel Krustofski"]
 
 /*
  PART 2
 */
 
+var teamSharks = [String]()
+var teamDragons = [String]()
+var teamRaptors = [String]()
+
+var experiencedTeam = [String]()
+var notExperiencedTeam = [String]()
+
+// Sorting all players in 2 groups - Experienced and NotExperienced
+
+/*
+func checkExperience(for player: [String:String]) -> String {
+  
+    for (key, value) in player {
+        if (key == "Experience") {
+            if (value == "YES") {
+                experiencedTeam.append("Experienced")
+                print("\(player["Name"]!) is Experienced player")
+            } else if (key == "Experience") {
+                if (value == "NO") {
+                    notExperiencedTeam.append("NotExperienced")
+                    print("\(player["Name"]!) is NotExperienced player")
+                } else {
+                    break
+                }
+            }
+        }
+    }
+    return player["Experience"]!
+}
+
+checkExperience(for: player1)
+checkExperience(for: player6)
+checkExperience(for: player2)
+
+notExperiencedTeam
+experiencedTeam
+ 
+*/
+
+for player in players {
+    for (key, value) in player {
+        if (key == "Experience") && (value == "YES") {
+            experiencedTeam.append(player["Name"]!)
+        } else if (key == "Experience") && (value == "NO") {
+            notExperiencedTeam.append(player["Name"]!)
+        }
+    }
+}
+
+//print(experiencedTeam)
+//print(notExperiencedTeam)
+
+// Logic to divide Experienced players equally in 3 teams
+
+//for player in experiencedTeam.count {
+//    if player % 1 {
+//        teamSharks.append(player)
+//    }
+//}
+
+for player in experiencedTeam {
+    print("\(player) - is experienced player")
+}
+
+var emptyArray1 = [Int]()
+var emptyArray2 = [Int]()
+var emptyArray3 = [Int]()
+
+var index = 0
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Что бы распределить experienced и notExperienced поровну мы делаем players.count и затем через % вычисляем остаток от 3х 2х и 1 и append по командам
 
 
 
