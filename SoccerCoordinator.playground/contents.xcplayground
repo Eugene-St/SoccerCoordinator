@@ -3,5 +3,7 @@
     <pages>
         <page name='SoccerCoordinator3'/>
         <page name='SoccerCoordinator'/>
+        <page name='Comments'/>
+        <page name='Project 1'/>
     </pages>
 </playground>

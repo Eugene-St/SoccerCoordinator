@@ -52,10 +52,36 @@ while notExpCount > 0 {
     notExpCount -= 3
 }
 
+// Part 3
 
+// Practice schedule info
 
+let practice = ["Team Sharks": "March 17, at 1 pm", "Team Dragons": "March 17, at 3 pm", "Team Raptors": "March 18, ar 1 pm"]
 
+// Function to compile letters
 
+func createLetter(forPlayers players: [String: Any], ofTeam team: String) -> String {
+    let letter: String = "Hello \(players["Guardian"]!),\n   We are glad to let you know that \(players["Name"]!) has been accepted to \(team) team. \n   Please note that live practive begins on \(practice[team]!).\n   We are waiting for your attendance. \n\n"
+    return letter
+}
+
+var letters = [String]()
+
+// Logic to attend and send letters
+
+func sendLettersTo(teamName: [[String: Any]], ofTheTeam: String) {
+    for players in teamName {
+        letters.append(createLetter(forPlayers: players, ofTeam: ofTheTeam))
+    }
+}
+
+sendLettersTo(teamName: teamSharks, ofTheTeam: "Team Sharks")
+sendLettersTo(teamName: teamDragons, ofTheTeam: "Team Dragons")
+sendLettersTo(teamName: teamRaptors, ofTheTeam: "Team Raptors")
+
+for letter in letters {
+    print(letter)
+}
 
 
 
